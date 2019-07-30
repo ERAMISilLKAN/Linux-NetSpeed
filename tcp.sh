@@ -4,21 +4,21 @@ export PATH
 
 #=================================================
 #	System Required: CentOS 6/7,Debian 8/9,Ubuntu 16+
-#	Description: BBR+BBRÄ§¸Ä°æ+BBRplus+Lotserver
+#	Description: BBR+BBRé­”æ”¹ç‰ˆ+BBRplus+Lotserver
 #	Version: 1.3.1
-#	Author: Ç§Ó°,cx9208
+#	Author: åƒå½±,cx9208
 #	Blog: https://www.94ish.me/
 #=================================================
 
 sh_ver="1.3.1"
-github="raw.githubusercontent.com/cx9208/Linux-NetSpeed/master"
+github="raw.githubusercontent.com/ERAMISilLKAN/Linux-NetSpeed/master"
 
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
-Info="${Green_font_prefix}[ĞÅÏ¢]${Font_color_suffix}"
-Error="${Red_font_prefix}[´íÎó]${Font_color_suffix}"
-Tip="${Green_font_prefix}[×¢Òâ]${Font_color_suffix}"
+Info="${Green_font_prefix}[ä¿¡æ¯]${Font_color_suffix}"
+Error="${Red_font_prefix}[é”™è¯¯]${Font_color_suffix}"
+Tip="${Green_font_prefix}[æ³¨æ„]${Font_color_suffix}"
 
-#°²×°BBRÄÚºË
+#å®‰è£…BBRå†…æ ¸
 installbbr(){
 	kernel_version="4.11.8"
 	if [[ "${release}" == "centos" ]]; then
@@ -42,16 +42,16 @@ installbbr(){
 	fi
 	detele_kernel
 	BBR_grub
-	echo -e "${Tip} ÖØÆôVPSºó£¬ÇëÖØĞÂÔËĞĞ½Å±¾¿ªÆô${Red_font_prefix}BBR/BBRÄ§¸Ä°æ${Font_color_suffix}"
-	stty erase '^H' && read -p "ĞèÒªÖØÆôVPSºó£¬²ÅÄÜ¿ªÆôBBR/BBRÄ§¸Ä°æ£¬ÊÇ·ñÏÖÔÚÖØÆô ? [Y/n] :" yn
+	echo -e "${Tip} é‡å¯VPSåï¼Œè¯·é‡æ–°è¿è¡Œè„šæœ¬å¼€å¯${Red_font_prefix}BBR/BBRé­”æ”¹ç‰ˆ${Font_color_suffix}"
+	stty erase '^H' && read -p "éœ€è¦é‡å¯VPSåï¼Œæ‰èƒ½å¼€å¯BBR/BBRé­”æ”¹ç‰ˆï¼Œæ˜¯å¦ç°åœ¨é‡å¯ ? [Y/n] :" yn
 	[ -z "${yn}" ] && yn="y"
 	if [[ $yn == [Yy] ]]; then
-		echo -e "${Info} VPS ÖØÆôÖĞ..."
+		echo -e "${Info} VPS é‡å¯ä¸­..."
 		reboot
 	fi
 }
 
-#°²×°BBRplusÄÚºË
+#å®‰è£…BBRpluså†…æ ¸
 installbbrplus(){
 	kernel_version="4.14.129-bbrplus"
 	if [[ "${release}" == "centos" ]]; then
@@ -69,16 +69,16 @@ installbbrplus(){
 	fi
 	detele_kernel
 	BBR_grub
-	echo -e "${Tip} ÖØÆôVPSºó£¬ÇëÖØĞÂÔËĞĞ½Å±¾¿ªÆô${Red_font_prefix}BBRplus${Font_color_suffix}"
-	stty erase '^H' && read -p "ĞèÒªÖØÆôVPSºó£¬²ÅÄÜ¿ªÆôBBRplus£¬ÊÇ·ñÏÖÔÚÖØÆô ? [Y/n] :" yn
+	echo -e "${Tip} é‡å¯VPSåï¼Œè¯·é‡æ–°è¿è¡Œè„šæœ¬å¼€å¯${Red_font_prefix}BBRplus${Font_color_suffix}"
+	stty erase '^H' && read -p "éœ€è¦é‡å¯VPSåï¼Œæ‰èƒ½å¼€å¯BBRplusï¼Œæ˜¯å¦ç°åœ¨é‡å¯ ? [Y/n] :" yn
 	[ -z "${yn}" ] && yn="y"
 	if [[ $yn == [Yy] ]]; then
-		echo -e "${Info} VPS ÖØÆôÖĞ..."
+		echo -e "${Info} VPS é‡å¯ä¸­..."
 		reboot
 	fi
 }
 
-#°²×°LotserverÄÚºË
+#å®‰è£…Lotserverå†…æ ¸
 installlot(){
 	if [[ "${release}" == "centos" ]]; then
 		rpm --import http://${github}/lotserver/${release}/RPM-GPG-KEY-elrepo.org
@@ -95,34 +95,34 @@ installlot(){
 	fi
 	detele_kernel
 	BBR_grub
-	echo -e "${Tip} ÖØÆôVPSºó£¬ÇëÖØĞÂÔËĞĞ½Å±¾¿ªÆô${Red_font_prefix}Lotserver${Font_color_suffix}"
-	stty erase '^H' && read -p "ĞèÒªÖØÆôVPSºó£¬²ÅÄÜ¿ªÆôLotserver£¬ÊÇ·ñÏÖÔÚÖØÆô ? [Y/n] :" yn
+	echo -e "${Tip} é‡å¯VPSåï¼Œè¯·é‡æ–°è¿è¡Œè„šæœ¬å¼€å¯${Red_font_prefix}Lotserver${Font_color_suffix}"
+	stty erase '^H' && read -p "éœ€è¦é‡å¯VPSåï¼Œæ‰èƒ½å¼€å¯Lotserverï¼Œæ˜¯å¦ç°åœ¨é‡å¯ ? [Y/n] :" yn
 	[ -z "${yn}" ] && yn="y"
 	if [[ $yn == [Yy] ]]; then
-		echo -e "${Info} VPS ÖØÆôÖĞ..."
+		echo -e "${Info} VPS é‡å¯ä¸­..."
 		reboot
 	fi
 }
 
-#ÆôÓÃBBR
+#å¯ç”¨BBR
 startbbr(){
 	remove_all
 	echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
 	echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
 	sysctl -p
-	echo -e "${Info}BBRÆô¶¯³É¹¦£¡"
+	echo -e "${Info}BBRå¯åŠ¨æˆåŠŸï¼"
 }
 
-#ÆôÓÃBBRplus
+#å¯ç”¨BBRplus
 startbbrplus(){
 	remove_all
 	echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
 	echo "net.ipv4.tcp_congestion_control=bbrplus" >> /etc/sysctl.conf
 	sysctl -p
-	echo -e "${Info}BBRplusÆô¶¯³É¹¦£¡"
+	echo -e "${Info}BBRpluså¯åŠ¨æˆåŠŸï¼"
 }
 
-#±àÒë²¢ÆôÓÃBBRÄ§¸Ä
+#ç¼–è¯‘å¹¶å¯ç”¨BBRé­”æ”¹
 startbbrmod(){
 	remove_all
 	if [[ "${release}" == "centos" ]]; then
@@ -159,10 +159,10 @@ startbbrmod(){
 	echo "net.ipv4.tcp_congestion_control=tsunami" >> /etc/sysctl.conf
 	sysctl -p
     cd .. && rm -rf bbrmod
-	echo -e "${Info}Ä§¸Ä°æBBRÆô¶¯³É¹¦£¡"
+	echo -e "${Info}é­”æ”¹ç‰ˆBBRå¯åŠ¨æˆåŠŸï¼"
 }
 
-#±àÒë²¢ÆôÓÃBBRÄ§¸Ä
+#ç¼–è¯‘å¹¶å¯ç”¨BBRé­”æ”¹
 startbbrmod_nanqinlang(){
 	remove_all
 	if [[ "${release}" == "centos" ]]; then
@@ -197,10 +197,10 @@ startbbrmod_nanqinlang(){
 	echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
 	echo "net.ipv4.tcp_congestion_control=nanqinlang" >> /etc/sysctl.conf
 	sysctl -p
-	echo -e "${Info}Ä§¸Ä°æBBRÆô¶¯³É¹¦£¡"
+	echo -e "${Info}é­”æ”¹ç‰ˆBBRå¯åŠ¨æˆåŠŸï¼"
 }
 
-#ÆôÓÃLotserver
+#å¯ç”¨Lotserver
 startlotserver(){
 	remove_all
 	if [[ "${release}" == "centos" ]]; then
@@ -213,7 +213,7 @@ startlotserver(){
 	start_menu
 }
 
-#Ğ¶ÔØÈ«²¿¼ÓËÙ
+#å¸è½½å…¨éƒ¨åŠ é€Ÿ
 remove_all(){
 	rm -rf bbrmod
 	sed -i '/net.core.default_qdisc/d' /etc/sysctl.conf
@@ -255,11 +255,11 @@ remove_all(){
 		bash <(wget --no-check-certificate -qO- https://github.com/MoeClub/lotServer/raw/master/Install.sh) uninstall
 	fi
 	clear
-	echo -e "${Info}:Çå³ı¼ÓËÙÍê³É¡£"
+	echo -e "${Info}:æ¸…é™¤åŠ é€Ÿå®Œæˆã€‚"
 	sleep 1s
 }
 
-#ÓÅ»¯ÏµÍ³ÅäÖÃ
+#ä¼˜åŒ–ç³»ç»Ÿé…ç½®
 optimizing_system(){
 	sed -i '/fs.file-max/d' /etc/sysctl.conf
 	sed -i '/fs.inotify.max_user_instances/d' /etc/sysctl.conf
@@ -298,66 +298,66 @@ net.ipv4.ip_forward = 1">>/etc/sysctl.conf
 	echo "*               soft    nofile           1000000
 *               hard    nofile          1000000">/etc/security/limits.conf
 	echo "ulimit -SHn 1000000">>/etc/profile
-	read -p "ĞèÒªÖØÆôVPSºó£¬²ÅÄÜÉúĞ§ÏµÍ³ÓÅ»¯ÅäÖÃ£¬ÊÇ·ñÏÖÔÚÖØÆô ? [Y/n] :" yn
+	read -p "éœ€è¦é‡å¯VPSåï¼Œæ‰èƒ½ç”Ÿæ•ˆç³»ç»Ÿä¼˜åŒ–é…ç½®ï¼Œæ˜¯å¦ç°åœ¨é‡å¯ ? [Y/n] :" yn
 	[ -z "${yn}" ] && yn="y"
 	if [[ $yn == [Yy] ]]; then
-		echo -e "${Info} VPS ÖØÆôÖĞ..."
+		echo -e "${Info} VPS é‡å¯ä¸­..."
 		reboot
 	fi
 }
-#¸üĞÂ½Å±¾
+#æ›´æ–°è„šæœ¬
 Update_Shell(){
-	echo -e "µ±Ç°°æ±¾Îª [ ${sh_ver} ]£¬¿ªÊ¼¼ì²â×îĞÂ°æ±¾..."
+	echo -e "å½“å‰ç‰ˆæœ¬ä¸º [ ${sh_ver} ]ï¼Œå¼€å§‹æ£€æµ‹æœ€æ–°ç‰ˆæœ¬..."
 	sh_new_ver=$(wget --no-check-certificate -qO- "http://${github}/tcp.sh"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1)
-	[[ -z ${sh_new_ver} ]] && echo -e "${Error} ¼ì²â×îĞÂ°æ±¾Ê§°Ü !" && start_menu
+	[[ -z ${sh_new_ver} ]] && echo -e "${Error} æ£€æµ‹æœ€æ–°ç‰ˆæœ¬å¤±è´¥ !" && start_menu
 	if [[ ${sh_new_ver} != ${sh_ver} ]]; then
-		echo -e "·¢ÏÖĞÂ°æ±¾[ ${sh_new_ver} ]£¬ÊÇ·ñ¸üĞÂ£¿[Y/n]"
-		read -p "(Ä¬ÈÏ: y):" yn
+		echo -e "å‘ç°æ–°ç‰ˆæœ¬[ ${sh_new_ver} ]ï¼Œæ˜¯å¦æ›´æ–°ï¼Ÿ[Y/n]"
+		read -p "(é»˜è®¤: y):" yn
 		[[ -z "${yn}" ]] && yn="y"
 		if [[ ${yn} == [Yy] ]]; then
 			wget -N --no-check-certificate http://${github}/tcp.sh && chmod +x tcp.sh
-			echo -e "½Å±¾ÒÑ¸üĞÂÎª×îĞÂ°æ±¾[ ${sh_new_ver} ] !"
+			echo -e "è„šæœ¬å·²æ›´æ–°ä¸ºæœ€æ–°ç‰ˆæœ¬[ ${sh_new_ver} ] !"
 		else
-			echo && echo "	ÒÑÈ¡Ïû..." && echo
+			echo && echo "	å·²å–æ¶ˆ..." && echo
 		fi
 	else
-		echo -e "µ±Ç°ÒÑÊÇ×îĞÂ°æ±¾[ ${sh_new_ver} ] !"
+		echo -e "å½“å‰å·²æ˜¯æœ€æ–°ç‰ˆæœ¬[ ${sh_new_ver} ] !"
 		sleep 5s
 	fi
 }
 
-#¿ªÊ¼²Ëµ¥
+#å¼€å§‹èœå•
 start_menu(){
 clear
-echo && echo -e " TCP¼ÓËÙ Ò»¼ü°²×°¹ÜÀí½Å±¾ ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
-  -- ¾ÍÊÇ°®Éú»î | 94ish.me --
+echo && echo -e " TCPåŠ é€Ÿ ä¸€é”®å®‰è£…ç®¡ç†è„šæœ¬ ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
+  -- å°±æ˜¯çˆ±ç”Ÿæ´» | 94ish.me --
   
- ${Green_font_prefix}0.${Font_color_suffix} Éı¼¶½Å±¾
-¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ªÄÚºË¹ÜÀí¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
- ${Green_font_prefix}1.${Font_color_suffix} °²×° BBR/BBRÄ§¸Ä°æÄÚºË
- ${Green_font_prefix}2.${Font_color_suffix} °²×° BBRplus°æÄÚºË 
- ${Green_font_prefix}3.${Font_color_suffix} °²×° Lotserver(ÈñËÙ)ÄÚºË
-¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¼ÓËÙ¹ÜÀí¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
- ${Green_font_prefix}4.${Font_color_suffix} Ê¹ÓÃBBR¼ÓËÙ
- ${Green_font_prefix}5.${Font_color_suffix} Ê¹ÓÃBBRÄ§¸Ä°æ¼ÓËÙ
- ${Green_font_prefix}6.${Font_color_suffix} Ê¹ÓÃ±©Á¦BBRÄ§¸Ä°æ¼ÓËÙ(²»Ö§³Ö²¿·ÖÏµÍ³)
- ${Green_font_prefix}7.${Font_color_suffix} Ê¹ÓÃBBRplus°æ¼ÓËÙ
- ${Green_font_prefix}8.${Font_color_suffix} Ê¹ÓÃLotserver(ÈñËÙ)¼ÓËÙ
-¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ªÔÓÏî¹ÜÀí¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
- ${Green_font_prefix}9.${Font_color_suffix} Ğ¶ÔØÈ«²¿¼ÓËÙ
- ${Green_font_prefix}10.${Font_color_suffix} ÏµÍ³ÅäÖÃÓÅ»¯
- ${Green_font_prefix}11.${Font_color_suffix} ÍË³ö½Å±¾
-¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª" && echo
+ ${Green_font_prefix}0.${Font_color_suffix} å‡çº§è„šæœ¬
+â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”å†…æ ¸ç®¡ç†â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
+ ${Green_font_prefix}1.${Font_color_suffix} å®‰è£… BBR/BBRé­”æ”¹ç‰ˆå†…æ ¸
+ ${Green_font_prefix}2.${Font_color_suffix} å®‰è£… BBRplusç‰ˆå†…æ ¸ 
+ ${Green_font_prefix}3.${Font_color_suffix} å®‰è£… Lotserver(é”é€Ÿ)å†…æ ¸
+â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”åŠ é€Ÿç®¡ç†â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
+ ${Green_font_prefix}4.${Font_color_suffix} ä½¿ç”¨BBRåŠ é€Ÿ
+ ${Green_font_prefix}5.${Font_color_suffix} ä½¿ç”¨BBRé­”æ”¹ç‰ˆåŠ é€Ÿ
+ ${Green_font_prefix}6.${Font_color_suffix} ä½¿ç”¨æš´åŠ›BBRé­”æ”¹ç‰ˆåŠ é€Ÿ(ä¸æ”¯æŒéƒ¨åˆ†ç³»ç»Ÿ)
+ ${Green_font_prefix}7.${Font_color_suffix} ä½¿ç”¨BBRplusç‰ˆåŠ é€Ÿ
+ ${Green_font_prefix}8.${Font_color_suffix} ä½¿ç”¨Lotserver(é”é€Ÿ)åŠ é€Ÿ
+â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”æ‚é¡¹ç®¡ç†â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
+ ${Green_font_prefix}9.${Font_color_suffix} å¸è½½å…¨éƒ¨åŠ é€Ÿ
+ ${Green_font_prefix}10.${Font_color_suffix} ç³»ç»Ÿé…ç½®ä¼˜åŒ–
+ ${Green_font_prefix}11.${Font_color_suffix} é€€å‡ºè„šæœ¬
+â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”" && echo
 
 	check_status
 	if [[ ${kernel_status} == "noinstall" ]]; then
-		echo -e " µ±Ç°×´Ì¬: ${Green_font_prefix}Î´°²×°${Font_color_suffix} ¼ÓËÙÄÚºË ${Red_font_prefix}ÇëÏÈ°²×°ÄÚºË${Font_color_suffix}"
+		echo -e " å½“å‰çŠ¶æ€: ${Green_font_prefix}æœªå®‰è£…${Font_color_suffix} åŠ é€Ÿå†…æ ¸ ${Red_font_prefix}è¯·å…ˆå®‰è£…å†…æ ¸${Font_color_suffix}"
 	else
-		echo -e " µ±Ç°×´Ì¬: ${Green_font_prefix}ÒÑ°²×°${Font_color_suffix} ${_font_prefix}${kernel_status}${Font_color_suffix} ¼ÓËÙÄÚºË , ${Green_font_prefix}${run_status}${Font_color_suffix}"
+		echo -e " å½“å‰çŠ¶æ€: ${Green_font_prefix}å·²å®‰è£…${Font_color_suffix} ${_font_prefix}${kernel_status}${Font_color_suffix} åŠ é€Ÿå†…æ ¸ , ${Green_font_prefix}${run_status}${Font_color_suffix}"
 		
 	fi
 echo
-read -p " ÇëÊäÈëÊı×Ö [0-11]:" num
+read -p " è¯·è¾“å…¥æ•°å­— [0-11]:" num
 case "$num" in
 	0)
 	Update_Shell
@@ -397,59 +397,59 @@ case "$num" in
 	;;
 	*)
 	clear
-	echo -e "${Error}:ÇëÊäÈëÕıÈ·Êı×Ö [0-11]"
+	echo -e "${Error}:è¯·è¾“å…¥æ­£ç¡®æ•°å­— [0-11]"
 	sleep 5s
 	start_menu
 	;;
 esac
 }
-#############ÄÚºË¹ÜÀí×é¼ş#############
+#############å†…æ ¸ç®¡ç†ç»„ä»¶#############
 
-#É¾³ı¶àÓàÄÚºË
+#åˆ é™¤å¤šä½™å†…æ ¸
 detele_kernel(){
 	if [[ "${release}" == "centos" ]]; then
 		rpm_total=`rpm -qa | grep kernel | grep -v "${kernel_version}" | grep -v "noarch" | wc -l`
 		if [ "${rpm_total}" > "1" ]; then
-			echo -e "¼ì²âµ½ ${rpm_total} ¸öÆäÓàÄÚºË£¬¿ªÊ¼Ğ¶ÔØ..."
+			echo -e "æ£€æµ‹åˆ° ${rpm_total} ä¸ªå…¶ä½™å†…æ ¸ï¼Œå¼€å§‹å¸è½½..."
 			for((integer = 1; integer <= ${rpm_total}; integer++)); do
 				rpm_del=`rpm -qa | grep kernel | grep -v "${kernel_version}" | grep -v "noarch" | head -${integer}`
-				echo -e "¿ªÊ¼Ğ¶ÔØ ${rpm_del} ÄÚºË..."
+				echo -e "å¼€å§‹å¸è½½ ${rpm_del} å†…æ ¸..."
 				rpm --nodeps -e ${rpm_del}
-				echo -e "Ğ¶ÔØ ${rpm_del} ÄÚºËĞ¶ÔØÍê³É£¬¼ÌĞø..."
+				echo -e "å¸è½½ ${rpm_del} å†…æ ¸å¸è½½å®Œæˆï¼Œç»§ç»­..."
 			done
-			echo --nodeps -e "ÄÚºËĞ¶ÔØÍê±Ï£¬¼ÌĞø..."
+			echo --nodeps -e "å†…æ ¸å¸è½½å®Œæ¯•ï¼Œç»§ç»­..."
 		else
-			echo -e " ¼ì²âµ½ ÄÚºË ÊıÁ¿²»ÕıÈ·£¬Çë¼ì²é !" && exit 1
+			echo -e " æ£€æµ‹åˆ° å†…æ ¸ æ•°é‡ä¸æ­£ç¡®ï¼Œè¯·æ£€æŸ¥ !" && exit 1
 		fi
 	elif [[ "${release}" == "debian" || "${release}" == "ubuntu" ]]; then
 		deb_total=`dpkg -l | grep linux-image | awk '{print $2}' | grep -v "${kernel_version}" | wc -l`
 		if [ "${deb_total}" > "1" ]; then
-			echo -e "¼ì²âµ½ ${deb_total} ¸öÆäÓàÄÚºË£¬¿ªÊ¼Ğ¶ÔØ..."
+			echo -e "æ£€æµ‹åˆ° ${deb_total} ä¸ªå…¶ä½™å†…æ ¸ï¼Œå¼€å§‹å¸è½½..."
 			for((integer = 1; integer <= ${deb_total}; integer++)); do
 				deb_del=`dpkg -l|grep linux-image | awk '{print $2}' | grep -v "${kernel_version}" | head -${integer}`
-				echo -e "¿ªÊ¼Ğ¶ÔØ ${deb_del} ÄÚºË..."
+				echo -e "å¼€å§‹å¸è½½ ${deb_del} å†…æ ¸..."
 				apt-get purge -y ${deb_del}
-				echo -e "Ğ¶ÔØ ${deb_del} ÄÚºËĞ¶ÔØÍê³É£¬¼ÌĞø..."
+				echo -e "å¸è½½ ${deb_del} å†…æ ¸å¸è½½å®Œæˆï¼Œç»§ç»­..."
 			done
-			echo -e "ÄÚºËĞ¶ÔØÍê±Ï£¬¼ÌĞø..."
+			echo -e "å†…æ ¸å¸è½½å®Œæ¯•ï¼Œç»§ç»­..."
 		else
-			echo -e " ¼ì²âµ½ ÄÚºË ÊıÁ¿²»ÕıÈ·£¬Çë¼ì²é !" && exit 1
+			echo -e " æ£€æµ‹åˆ° å†…æ ¸ æ•°é‡ä¸æ­£ç¡®ï¼Œè¯·æ£€æŸ¥ !" && exit 1
 		fi
 	fi
 }
 
-#¸üĞÂÒıµ¼
+#æ›´æ–°å¼•å¯¼
 BBR_grub(){
 	if [[ "${release}" == "centos" ]]; then
         if [[ ${version} = "6" ]]; then
             if [ ! -f "/boot/grub/grub.conf" ]; then
-                echo -e "${Error} /boot/grub/grub.conf ÕÒ²»µ½£¬Çë¼ì²é."
+                echo -e "${Error} /boot/grub/grub.conf æ‰¾ä¸åˆ°ï¼Œè¯·æ£€æŸ¥."
                 exit 1
             fi
             sed -i 's/^default=.*/default=0/g' /boot/grub/grub.conf
         elif [[ ${version} = "7" ]]; then
             if [ ! -f "/boot/grub2/grub.cfg" ]; then
-                echo -e "${Error} /boot/grub2/grub.cfg ÕÒ²»µ½£¬Çë¼ì²é."
+                echo -e "${Error} /boot/grub2/grub.cfg æ‰¾ä¸åˆ°ï¼Œè¯·æ£€æŸ¥."
                 exit 1
             fi
             grub2-set-default 0
@@ -459,13 +459,13 @@ BBR_grub(){
     fi
 }
 
-#############ÄÚºË¹ÜÀí×é¼ş#############
+#############å†…æ ¸ç®¡ç†ç»„ä»¶#############
 
 
 
-#############ÏµÍ³¼ì²â×é¼ş#############
+#############ç³»ç»Ÿæ£€æµ‹ç»„ä»¶#############
 
-#¼ì²éÏµÍ³
+#æ£€æŸ¥ç³»ç»Ÿ
 check_sys(){
 	if [[ -f /etc/redhat-release ]]; then
 		release="centos"
@@ -484,7 +484,7 @@ check_sys(){
     fi
 }
 
-#¼ì²éLinux°æ±¾
+#æ£€æŸ¥Linuxç‰ˆæœ¬
 check_version(){
 	if [[ -s /etc/redhat-release ]]; then
 		version=`grep -oE  "[0-9.]+" /etc/redhat-release | cut -d . -f 1`
@@ -499,29 +499,29 @@ check_version(){
 	fi
 }
 
-#¼ì²é°²×°bbrµÄÏµÍ³ÒªÇó
+#æ£€æŸ¥å®‰è£…bbrçš„ç³»ç»Ÿè¦æ±‚
 check_sys_bbr(){
 	check_version
 	if [[ "${release}" == "centos" ]]; then
 		if [[ ${version} -ge "6" ]]; then
 			installbbr
 		else
-			echo -e "${Error} BBRÄÚºË²»Ö§³Öµ±Ç°ÏµÍ³ ${release} ${version} ${bit} !" && exit 1
+			echo -e "${Error} BBRå†…æ ¸ä¸æ”¯æŒå½“å‰ç³»ç»Ÿ ${release} ${version} ${bit} !" && exit 1
 		fi
 	elif [[ "${release}" == "debian" ]]; then
 		if [[ ${version} -ge "8" ]]; then
 			installbbr
 		else
-			echo -e "${Error} BBRÄÚºË²»Ö§³Öµ±Ç°ÏµÍ³ ${release} ${version} ${bit} !" && exit 1
+			echo -e "${Error} BBRå†…æ ¸ä¸æ”¯æŒå½“å‰ç³»ç»Ÿ ${release} ${version} ${bit} !" && exit 1
 		fi
 	elif [[ "${release}" == "ubuntu" ]]; then
 		if [[ ${version} -ge "14" ]]; then
 			installbbr
 		else
-			echo -e "${Error} BBRÄÚºË²»Ö§³Öµ±Ç°ÏµÍ³ ${release} ${version} ${bit} !" && exit 1
+			echo -e "${Error} BBRå†…æ ¸ä¸æ”¯æŒå½“å‰ç³»ç»Ÿ ${release} ${version} ${bit} !" && exit 1
 		fi
 	else
-		echo -e "${Error} BBRÄÚºË²»Ö§³Öµ±Ç°ÏµÍ³ ${release} ${version} ${bit} !" && exit 1
+		echo -e "${Error} BBRå†…æ ¸ä¸æ”¯æŒå½“å‰ç³»ç»Ÿ ${release} ${version} ${bit} !" && exit 1
 	fi
 }
 
@@ -531,27 +531,27 @@ check_sys_bbrplus(){
 		if [[ ${version} -ge "6" ]]; then
 			installbbrplus
 		else
-			echo -e "${Error} BBRplusÄÚºË²»Ö§³Öµ±Ç°ÏµÍ³ ${release} ${version} ${bit} !" && exit 1
+			echo -e "${Error} BBRpluså†…æ ¸ä¸æ”¯æŒå½“å‰ç³»ç»Ÿ ${release} ${version} ${bit} !" && exit 1
 		fi
 	elif [[ "${release}" == "debian" ]]; then
 		if [[ ${version} -ge "8" ]]; then
 			installbbrplus
 		else
-			echo -e "${Error} BBRplusÄÚºË²»Ö§³Öµ±Ç°ÏµÍ³ ${release} ${version} ${bit} !" && exit 1
+			echo -e "${Error} BBRpluså†…æ ¸ä¸æ”¯æŒå½“å‰ç³»ç»Ÿ ${release} ${version} ${bit} !" && exit 1
 		fi
 	elif [[ "${release}" == "ubuntu" ]]; then
 		if [[ ${version} -ge "14" ]]; then
 			installbbrplus
 		else
-			echo -e "${Error} BBRplusÄÚºË²»Ö§³Öµ±Ç°ÏµÍ³ ${release} ${version} ${bit} !" && exit 1
+			echo -e "${Error} BBRpluså†…æ ¸ä¸æ”¯æŒå½“å‰ç³»ç»Ÿ ${release} ${version} ${bit} !" && exit 1
 		fi
 	else
-		echo -e "${Error} BBRplusÄÚºË²»Ö§³Öµ±Ç°ÏµÍ³ ${release} ${version} ${bit} !" && exit 1
+		echo -e "${Error} BBRpluså†…æ ¸ä¸æ”¯æŒå½“å‰ç³»ç»Ÿ ${release} ${version} ${bit} !" && exit 1
 	fi
 }
 
 
-#¼ì²é°²×°LotseverµÄÏµÍ³ÒªÇó
+#æ£€æŸ¥å®‰è£…Lotseverçš„ç³»ç»Ÿè¦æ±‚
 check_sys_Lotsever(){
 	check_version
 	if [[ "${release}" == "centos" ]]; then
@@ -563,7 +563,7 @@ check_sys_Lotsever(){
 			kernel_version="3.10.0-327"
 			installlot
 		else
-			echo -e "${Error} Lotsever²»Ö§³Öµ±Ç°ÏµÍ³ ${release} ${version} ${bit} !" && exit 1
+			echo -e "${Error} Lotseverä¸æ”¯æŒå½“å‰ç³»ç»Ÿ ${release} ${version} ${bit} !" && exit 1
 		fi
 	elif [[ "${release}" == "debian" ]]; then
 		if [[ ${version} = "7" || ${version} = "8" ]]; then
@@ -580,7 +580,7 @@ check_sys_Lotsever(){
 				installlot
 			fi
 		else
-			echo -e "${Error} Lotsever²»Ö§³Öµ±Ç°ÏµÍ³ ${release} ${version} ${bit} !" && exit 1
+			echo -e "${Error} Lotseverä¸æ”¯æŒå½“å‰ç³»ç»Ÿ ${release} ${version} ${bit} !" && exit 1
 		fi
 	elif [[ "${release}" == "ubuntu" ]]; then
 		if [[ ${version} -ge "12" ]]; then
@@ -592,10 +592,10 @@ check_sys_Lotsever(){
 				installlot
 			fi
 		else
-			echo -e "${Error} Lotsever²»Ö§³Öµ±Ç°ÏµÍ³ ${release} ${version} ${bit} !" && exit 1
+			echo -e "${Error} Lotseverä¸æ”¯æŒå½“å‰ç³»ç»Ÿ ${release} ${version} ${bit} !" && exit 1
 		fi
 	else
-		echo -e "${Error} Lotsever²»Ö§³Öµ±Ç°ÏµÍ³ ${release} ${version} ${bit} !" && exit 1
+		echo -e "${Error} Lotseverä¸æ”¯æŒå½“å‰ç³»ç»Ÿ ${release} ${version} ${bit} !" && exit 1
 	fi
 }
 
@@ -616,56 +616,56 @@ check_status(){
 		if [[ -e /appex/bin/lotServer.sh ]]; then
 			run_status=`bash /appex/bin/lotServer.sh status | grep "LotServer" | awk  '{print $3}'`
 			if [[ ${run_status} = "running!" ]]; then
-				run_status="Æô¶¯³É¹¦"
+				run_status="å¯åŠ¨æˆåŠŸ"
 			else 
-				run_status="Æô¶¯Ê§°Ü"
+				run_status="å¯åŠ¨å¤±è´¥"
 			fi
 		else 
-			run_status="Î´°²×°¼ÓËÙÄ£¿é"
+			run_status="æœªå®‰è£…åŠ é€Ÿæ¨¡å—"
 		fi
 	elif [[ ${kernel_status} == "BBR" ]]; then
 		run_status=`grep "net.ipv4.tcp_congestion_control" /etc/sysctl.conf | awk -F "=" '{print $2}'`
 		if [[ ${run_status} == "bbr" ]]; then
 			run_status=`lsmod | grep "bbr" | awk '{print $1}'`
 			if [[ ${run_status} == "tcp_bbr" ]]; then
-				run_status="BBRÆô¶¯³É¹¦"
+				run_status="BBRå¯åŠ¨æˆåŠŸ"
 			else 
-				run_status="BBRÆô¶¯Ê§°Ü"
+				run_status="BBRå¯åŠ¨å¤±è´¥"
 			fi
 		elif [[ ${run_status} == "tsunami" ]]; then
 			run_status=`lsmod | grep "tsunami" | awk '{print $1}'`
 			if [[ ${run_status} == "tcp_tsunami" ]]; then
-				run_status="BBRÄ§¸Ä°æÆô¶¯³É¹¦"
+				run_status="BBRé­”æ”¹ç‰ˆå¯åŠ¨æˆåŠŸ"
 			else 
-				run_status="BBRÄ§¸Ä°æÆô¶¯Ê§°Ü"
+				run_status="BBRé­”æ”¹ç‰ˆå¯åŠ¨å¤±è´¥"
 			fi
 		elif [[ ${run_status} == "nanqinlang" ]]; then
 			run_status=`lsmod | grep "nanqinlang" | awk '{print $1}'`
 			if [[ ${run_status} == "tcp_nanqinlang" ]]; then
-				run_status="±©Á¦BBRÄ§¸Ä°æÆô¶¯³É¹¦"
+				run_status="æš´åŠ›BBRé­”æ”¹ç‰ˆå¯åŠ¨æˆåŠŸ"
 			else 
-				run_status="±©Á¦BBRÄ§¸Ä°æÆô¶¯Ê§°Ü"
+				run_status="æš´åŠ›BBRé­”æ”¹ç‰ˆå¯åŠ¨å¤±è´¥"
 			fi
 		else 
-			run_status="Î´°²×°¼ÓËÙÄ£¿é"
+			run_status="æœªå®‰è£…åŠ é€Ÿæ¨¡å—"
 		fi
 	elif [[ ${kernel_status} == "BBRplus" ]]; then
 		run_status=`grep "net.ipv4.tcp_congestion_control" /etc/sysctl.conf | awk -F "=" '{print $2}'`
 		if [[ ${run_status} == "bbrplus" ]]; then
 			run_status=`lsmod | grep "bbrplus" | awk '{print $1}'`
 			if [[ ${run_status} == "tcp_bbrplus" ]]; then
-				run_status="BBRplusÆô¶¯³É¹¦"
+				run_status="BBRpluså¯åŠ¨æˆåŠŸ"
 			else 
-				run_status="BBRplusÆô¶¯Ê§°Ü"
+				run_status="BBRpluså¯åŠ¨å¤±è´¥"
 			fi
 		else 
-			run_status="Î´°²×°¼ÓËÙÄ£¿é"
+			run_status="æœªå®‰è£…åŠ é€Ÿæ¨¡å—"
 		fi
 	fi
 }
 
-#############ÏµÍ³¼ì²â×é¼ş#############
+#############ç³»ç»Ÿæ£€æµ‹ç»„ä»¶#############
 check_sys
 check_version
-[[ ${release} != "debian" ]] && [[ ${release} != "ubuntu" ]] && [[ ${release} != "centos" ]] && echo -e "${Error} ±¾½Å±¾²»Ö§³Öµ±Ç°ÏµÍ³ ${release} !" && exit 1
+[[ ${release} != "debian" ]] && [[ ${release} != "ubuntu" ]] && [[ ${release} != "centos" ]] && echo -e "${Error} æœ¬è„šæœ¬ä¸æ”¯æŒå½“å‰ç³»ç»Ÿ ${release} !" && exit 1
 start_menu
